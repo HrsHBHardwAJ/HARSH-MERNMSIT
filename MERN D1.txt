@@ -1,0 +1,40 @@
+=>Code for prime no in JS
+function primeno(x){
+   var s=0;
+   for(var i=1;i<=x;i++){
+       if(x%i==0){s=s+1;}
+       }
+    if(s==2){console.log(`${x} is a primen no`);}
+    else{console.log(`${x} not a prime no`);}
+}
+primeno(13);
+
+=>Code for armstrong no
+function arm(x){
+    var s=x.toString();
+    console.log(s);
+    var l =s.length;
+    console.log(l);
+    var sum= 0;
+    for(var i=0;i<l;i++){
+        sum =sum + Math.pow(parseInt(s[i]),l);
+    }   console.log(sum); 
+    if(sum==x){console.log(`${sum} is armstrong no`);}
+    else{console.log(`${sum} is not a armstrong no`);}
+}
+arm(371);
+
+=>Code for add():
+function add(){
+    var sum=0; 
+    for(var i=0;i<arguments.length;i++){
+        if(arguments[i] instanceof Array){
+            for(var j=0;j<arguments.length;j++)
+                {sum= sum+(isNaN(arguments[i][j])?0:arguments[i][j]);}
+        }else if(typeof arguments[i]=='string'){
+            sum=sum+ (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i])) ;
+        }else if(typeof arguments[i]=='object'){
+            continue;}
+        else{sum =sum+arguments[i];}
+    }console.log(`${sum} is the sum`);
+}
