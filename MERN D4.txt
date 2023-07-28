@@ -1,0 +1,43 @@
+Q) i. create an array of salaries, now do the sum of salaries >10000. HINT; REDUCE FUNCTION
+=>const sal=[8723,17273,9876,22456,14822,7564,10001];
+const sum=sal.reduce((acc,cv)=>{
+    if(cv>10000){acc=acc+cv;}return acc;
+},0)
+console.log(sum);
+
+
+ii Get the max salary from an array
+=>const sal=[8723,17273,9876,22456,14822,7564,10001];
+const m= sal.reduce((acc,cv)=>{
+    if(cv>acc){acc=cv;}return acc;
+});
+console.log(m);
+
+
+iii count those salaries whose>10000, note; don't use filter use reduce
+=>const x=sal.reduce((acc,cv)=>{
+   if(cv>10000){acc++;}return acc; 
+},0);
+console.log(x);
+
+iv Maintain an array of employees (array of objects), now sort the employees by name or salary
+=>var emp=[{name:'vikram',sal:12392},
+      {name:'rohit',sal:9876},
+      {name:'harsh',sal:17568},
+      {name:'ashish',sal:9456}]
+emp.sort((a,b)=>a.sal-b.sal);
+emp.sort((a,b)=>(a.name).localeCompare(b.name));
+
+
+v in employee salary add 10% tax in each employee salary and store in a new array, so don't modify the original array (Hint use filter, maps)
+BY USING MAP()
+var sal=[7623,74283,23874,9128,87122,9823,98128];
+var x= sal.map(num=> num+(num*0.1));
+var emp=[{name:'vikram',sal:12392},
+      {name:'rohit',sal:9876},
+      {name:'harsh',sal:17568},
+      {name:'ashish',sal:9456}]
+var modemp= emp.map( emp =>{
+    return {name: emp.name , sal : emp.sal+(0.1*emp.sal)};
+});
+console.log(modemp);

@@ -1,0 +1,29 @@
+>use of prompt():
+function fig(){
+    var x= parseInt(prompt("length"));
+    var y= parseInt(prompt("breadth"));
+    console.log("area of rectangle ",(x*y));
+    console.log("paerimeter",(2*(x+y)));
+}
+
+>anonymous function/Function expression:
+function calc(){
+    var a =function(x,y){
+        return x+y;
+    }
+    var b=function(x,y){
+        return x-y;
+    }
+    return{a,b}
+}
+
+>Named Function Expression: can be used as a reference to the function inside its own body(recursion)
+
+var f = function add(a,b){
+    return a+b;
+};
+console.log(f(2334,7885));
+
+>Arrow Function:
+var sq= (s)=>(s*s);
+console.log(sq(12));
